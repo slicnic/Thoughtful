@@ -1,22 +1,56 @@
 import { useState, useEffect } from "react";
+import LoginForm from "./components/LoginForm";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
   }, []);
 
+  if (!user) return <Login onLogin={setUser} />;
+
   return (
-    <div className="App">
-      <h1>Page Count: {count}</h1>
-    </div>
+    <>
+      <NavBar user={user} setUser={setUser} />
+      <main>
+        <Switch>
+          <Route path="/new">
+            <NewRecipe user={user} />
+          </Route>
+          <Route path="/">
+            <RecipeList />
+          </Route>
+        </Switch>
+      </main>
+    </>
   );
-}
+} 
 
 export default App;
+
+
+ // const [count, setCount] = useState(0);
+
+  // useEffect(() => {
+  //   fetch("/hello")
+  //     .then((r) => r.json())
+  //     .then((data) => setCount(data.count));
+  // }, []);
+  //  return (
+//     <div className="App">
+//       <h2>Page Count: {count}</h2>
+//       <body>
+      
+//       </body>
+//     </div>
+//   );
+// }
 
 
 // import logo from './logo.svg';
@@ -44,5 +78,3 @@ export default App;
 // }
 
 // export default App;
-
-

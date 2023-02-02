@@ -24,12 +24,18 @@ end
 
 puts "Creating Logs"
 6.times do
-    Log.create(content: Faker::Name.name)
+    Log.create(content: Faker::Coffee.notes)
 end
 
 puts "Creating Emotions"
-6.times do
-    Emotion.create(name: Faker::Name.name)
+
+60.times do
+    Emotion.create(emotion: Faker::Emotion.adjective)
+    # Faker::Emotion.noun  Faker::MichaelScott.quote
+end
+puts "and more"
+60.times do
+    Emotion.create(emotion: Faker::Emotion.noun)
 end
 
 puts "Done Seeding!"

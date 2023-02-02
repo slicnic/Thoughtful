@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_31_195900) do
   enable_extension "plpgsql"
 
   create_table "emotions", force: :cascade do |t|
-    t.string "name"
+    t.string "emotion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
