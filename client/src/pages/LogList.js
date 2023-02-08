@@ -19,7 +19,8 @@ function LogList() {
         logs.map((log) => (
           <div key={log.id}>
             <div>
-              <h2>{log.content}</h2>
+              <p>A prominent feeling for me today is {log.emotion.emotion}</p>
+              <h2>My log entry around that feeling: {log.content}</h2>
               <p>
                 <cite>By {log.user.name}</cite>
               </p>

@@ -13,7 +13,7 @@ function ShowEmotion(){
   },[]);
 
   const mappedEmotions = emotions.map((emotion)=>(
-    <li>Emotion: {emotion.emotion}, id: {emotion.id}</li>
+    <li>Emotion: {emotion.emotion}, ID: {emotion.id}</li>
   ))
 
   return(

@@ -48,7 +48,7 @@ function NewLog({ user }) {
             />
           </div>
           <div>
-            <label htmlFor="emotion">Emotion id goes here...</label>
+            <label htmlFor="emotion">Emotion ID goes here...</label>
             <input
               type="text"
               id="emotion"
