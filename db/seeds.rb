@@ -16,26 +16,29 @@ User.destroy_all
 puts "Seeding!"
 
 puts "Creating Users"
-User.create(name:"admin13", password:"123")
+User.create(name:"admin", password:"123")
+User.create(name:"nic", password:"nic")
+
 
 6.times do
     User.create(name: Faker::Name.name, password_digest: "password")
 end
 
-puts "Creating Logs"
-6.times do
-    Log.create(content: Faker::Coffee.notes)
-end
+
 
 puts "Creating Emotions"
 
-60.times do
+6.times do
     Emotion.create(emotion: Faker::Emotion.adjective)
     # Faker::Emotion.noun  Faker::MichaelScott.quote
 end
 puts "and more"
-60.times do
+6.times do
     Emotion.create(emotion: Faker::Emotion.noun)
 end
 
+puts "Creating Logs"
+10.times do
+    Log.create(content: Faker::Coffee.notes, user_id: User.all.sample.id, emotion_id: Emotion.all.sample.id)
+end
 puts "Done Seeding!"

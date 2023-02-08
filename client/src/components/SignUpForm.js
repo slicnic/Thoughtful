@@ -40,7 +40,7 @@ function SignUpForm({ onLogin }) {
           type="text"
           id="name"
           autoComplete="off"
-          value={username}
+          value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </>
@@ -67,11 +67,11 @@ function SignUpForm({ onLogin }) {
       <>
         <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
       </>
-      <>
+      {/* <>
         {errors.map((err) => (
           <p key={err}>{err}</p>
         ))}
-      </>
+      </> */}
     </form>
   );
 }

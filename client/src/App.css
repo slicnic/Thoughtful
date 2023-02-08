@@ -4,6 +4,7 @@ body {
   margin: 0px;
   font-family: 'Ultra', serif;
   color: #8f0909;
+  /* background: ; */
 }
 
 .root {
@@ -52,6 +53,12 @@ header img {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.Navbar {
+  padding: 8px 32px;
+  height: 64px;
+  position: relative;
 }
 
 #current-animals {

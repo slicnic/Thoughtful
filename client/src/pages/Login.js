@@ -1,43 +1,43 @@
 import { useState } from "react";
-import styled from "styled-components";
+//import styled from "styled-components";
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
-import { Button } from "../styles";
+//import { Button } from "../styles";
 
 function Login({ onLogin }) {
     const [showLogin, setShowLogin] = useState(true);
 
     return (
-        <Wrapper>
-            <Logo>Reciplease</Logo>
+        <div>
+            <div>Thoughtful</div>
             {showLogin ? (
                 <>
                     <LoginForm onLogin={onLogin} />
-                    <Divider />
+                    <div />
                     <p>
                         Don't have an account? &nbsp;
-                        <Button color="secondary" onClick={() => setShowLogin(false)}>
+                        <button color="secondary" onClick={() => setShowLogin(false)}>
                             Sign Up
-                        </Button>
+                        </button>
                     </p>
                 </>
             ) : (
                 <>
                     <SignUpForm onLogin={onLogin} />
-                    <Divider />
+                    <div />
                     <p>
                         Already have an account? &nbsp;
-                        <Button color="secondary" onClick={() => setShowLogin(true)}>
+                        <button color="secondary" onClick={() => setShowLogin(true)}>
                             Log In
-                        </Button>
+                        </button>
                     </p>
                 </>
             )}
-        </Wrapper>
+        </div>
     );
 }
 
-const Logo = styled.h1`
+/*const Logo = styled.h1`
   font-family: "Permanent Marker", cursive;
   font-size: 3rem;
   color: deeppink;
@@ -54,6 +54,6 @@ const Divider = styled.hr`
   border: none;
   border-bottom: 1px solid #ccc;
   margin: 16px 0;
-`;
+`;*/
 
 export default Login;

@@ -10,8 +10,10 @@ Rails.application.routes.draw do
 
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
   post "/signup", to: "users#create"
-  get "/me", to: "users#index"
-  get "/logs", to: "log#index"
+  post "/logs", to: "logs#create"
+  # get "/new", to: "logs#create"
+  get "/me", to: "users#show"
+  get "/logs", to: "logs#index"
   get "/emotions", to: "emotion#index"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
