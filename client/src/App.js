@@ -23,9 +23,12 @@ function App() {
   if (!user) return <Login onLogin={setUser} />;
 
   return (
-    <>
+    <div>
+    <section>
       <NavBar className='Navbar' user={user} setUser={setUser} />
-      <main>
+      </section>
+      <div>
+        {/* class="bg-scroll bg-plant" */}
         <Switch>
           <Route exact path="/new">
             <NewLog user={user} />
@@ -37,54 +40,10 @@ function App() {
             <UserList />
           </Route>
         </Switch>
-      </main>
-    </>
+      </div>
+    </div>
   );
 } 
 
 export default App;
 
-
- // const [count, setCount] = useState(0);
-
-  // useEffect(() => {
-  //   fetch("/hello")
-  //     .then((r) => r.json())
-  //     .then((data) => setCount(data.count));
-  // }, []);
-  //  return (
-//     <div className="App">
-//       <h2>Page Count: {count}</h2>
-//       <body>
-      
-//       </body>
-//     </div>
-//   );
-// }
-
-
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;

@@ -34,13 +34,24 @@ function NewLog({ user }) {
   }
 
   return (
-    <div>
+    <div class="bg-plant bg-scroll bg-cover">
+      <div >
+        <h2 className="text-6xl font-mono font-bold text-teal-600 p-6">
+          Create New Log</h2>
+        <p className="text-xl font-mono font-bold text-black-600 p-6"> Today's emotion list:</p>
+        <ShowEmotion />
+        {/* <h1>{content}</h1>
+        <h2>{emotion}</h2> */}
+        <p>
+          <cite>This log created by {user.name}</cite>
+        </p>
+        <p className="text-xl font-mono font-bold text-black-600 p-6"> Select one by in-putting the ID in the form below</p>
+      </div>
       <div>
-        <h2>Create New Log</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="content">Content goes here...</label>
-            <input
+            <label className="text-xl font-mono font-bold text-teal-700 text-center p-2" htmlFor="content">Your log for today goes here:</label>
+            <input class="form-control block px-8 py-3 text-3xl font-normal text-indigo-700 bg-white bg-clip-padding border border-solid border-sky-500 rounded transition ease-in-out m-0"
               type="text"
               id="content"
               value={content}
@@ -48,27 +59,20 @@ function NewLog({ user }) {
             />
           </div>
           <div>
-            <label htmlFor="emotion">Emotion ID goes here...</label>
-            <input
+            <label className="text-xl font-mono font-bold text-teal-700 text-center p-2" htmlFor="emotion">Emotion ID goes here:</label>
+            <input class="form-control block px-8 py-3 text-3xl font-normal text-indigo-700 bg-white bg-clip-padding border border-solid border-sky-500 rounded transition ease-in-out m-0"
               type="text"
               id="emotion"
               value={emotion}
               onChange={(e) => setEmotion(e.target.value)}
             />
           </div>
-          <>
-            <button type="submit">{isLoading ? "Loading..." : "Submit Log"}</button>
-          </>
+          <div className=" py-5">
+            <button className="w-auto rounded bg-blue-500 py-3 px-6 text-white hover:bg-blue-600 focus:bg-blue-400"type="submit">{isLoading ? "Loading..." : "Submit Log"}</button>
+          </div>
         </form>
       </div>
-      <div>
-       <ShowEmotion/>
-        <h1>{content}</h1>
-        <h2>{emotion}</h2>
-        <p>
-          <cite>By {user.name}</cite>
-        </p>
-      </div>
+      
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { Button, Error, Input, FormField, Label } from "../styles";
 
 function LoginForm({ onLogin }) {
     const [name, setName] = useState("");
@@ -27,10 +26,10 @@ function LoginForm({ onLogin }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} class="pl-12">
             
-                <label htmlFor="name">Username</label>
-                <input
+            <label class="block text-xl font-medium text-teal-700 p-3" htmlFor="name">Name</label>
+            <input class="form-control block px-4 py-2 text-3xl font-normal text-indigo-700 bg-white bg-clip-padding border border-solid border-sky-500 rounded transition ease-in-out m-0"
                     type="text"
                     id="name"
                     autoComplete="off"
@@ -38,22 +37,20 @@ function LoginForm({ onLogin }) {
                     onChange={(e) => setName(e.target.value)}
                 />
             
-                <label htmlFor="password">Password</label>
-                <input
+            <label class="block text-xl font-medium text-teal-700 p-2" htmlFor="password">Password</label>
+            <input class="form-control block px-4 py-2 text-3xl font-normal text-teal-700 bg-white bg-clip-padding border border-solid border-sky-500 rounded transition ease-in-out m-0"
                     type="password"
                     id="password"
                     autoComplete="current-password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-            
-                <button variant="fill" color="primary" type="submit">
+            <div className="py-2">
+            <button className="w-auto rounded bg-indigo-400 py-3 px-6 text-bold text-white hover:bg-indigo-600" type="submit">
                     {isLoading ? "Loading..." : "Login"}
-                </button>
+            </button>
+            </div>
             
-                {/* {errors.map((err) => (
-                    <p key={err}>{err}</p>
-                ))} */}
         </form>
     );
 }

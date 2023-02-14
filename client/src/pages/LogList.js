@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-// import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
-// import styled from "styled-components";
-// import { Box, Button } from "../styles";
+
 
 function LogList() {
   const [logs, setLogs] = useState([]);
@@ -14,14 +12,14 @@ function LogList() {
   }, []);
 
   return (
-    <div>
+    <div class= "bg-plant bg-scroll bg-cover">
       {logs.length > 0 ? (
         logs.map((log) => (
           <div key={log.id}>
-            <div>
-              <p>A prominent feeling for me today is {log.emotion.emotion}</p>
-              <h2>My log entry around that feeling: {log.content}</h2>
-              <p>
+            <div >
+              <p class="text-white font-serif text-center pl-12 p-1.5">A prominent feeling for me today is {log.emotion.emotion}</p>
+              <h2 class="text-white text-center pl-9 p-1.5">My log entry around that feeling: {log.content}</h2>
+              <p class="text-white text-center pl-9 p-1.5">
                 <cite>By {log.user.name}</cite>
               </p>
             </div>

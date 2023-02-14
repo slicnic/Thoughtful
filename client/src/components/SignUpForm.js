@@ -33,10 +33,10 @@ function SignUpForm({ onLogin }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} class="pl-12">
       <>
-        <label htmlFor="name">Name</label>
-        <input
+        <label class="block text-xl font-medium text-teal-700 p-2" htmlFor="name">Name</label>
+        <input class="form-control block px-4 py-2 text-3xl font-normal text-indigo-700 bg-white bg-clip-padding border border-solid border-sky-500 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red focus:outline-none"
           type="text"
           id="name"
           autoComplete="off"
@@ -45,8 +45,8 @@ function SignUpForm({ onLogin }) {
         />
       </>
       <>
-        <label htmlFor="password">Password</label>
-        <input
+        <label class="block text-xl font-medium text-teal-700 p-2" htmlFor="password">Password</label>
+        <input class="form-control block px-4 py-2 text-3xl font-normal text-indigo-700 bg-white bg-clip-padding border border-solid border-sky-500 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red focus:outline-none"
           type="password"
           id="password"
           value={password}
@@ -55,8 +55,8 @@ function SignUpForm({ onLogin }) {
         />
       </>
       <>
-        <label htmlFor="password">Password Confirmation</label>
-        <input
+        <label class="block text-xl font-medium text-teal-700 p-2" htmlFor="password">Password Confirmation</label>
+        <input class="form-control block px-4 py-2 text-3xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-sky-500 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red focus:outline-none"
           type="password"
           id="password_confirmation"
           value={passwordConfirmation}
@@ -65,7 +65,7 @@ function SignUpForm({ onLogin }) {
         />
       </>
       <>
-        <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
+        <button class="block text-xl font-medium text-teal-700 p-2" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
       </>
       {/* <>
         {errors.map((err) => (
